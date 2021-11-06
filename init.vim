@@ -123,7 +123,7 @@ nnoremap <silent> gs    <cmd>Lspsaga signature_help<CR>
 "prettier
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 lua << EOF
-require("CatppuccinoColor")
+require("catppuccinoColor")
 require("treesitter")
 require("statusbar")
 EOF
