@@ -25,8 +25,17 @@ call plug#begin(stdpath('data') . 'vimplug')
 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+    Plug 'ayu-theme/ayu-vim'
+
 
 call plug#end()
+
+"AYU THEME SETTINGS (PUT IN ANOTHER FILE)
+set termguicolors     " enable true colors support
+"let ayucolor="light"  " for light version of theme
+let ayucolor="mirage" " for mirage version of theme
+"let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
 
 " Auto Complete
 " <CR>
@@ -123,7 +132,7 @@ nnoremap <silent> gs    <cmd>Lspsaga signature_help<CR>
 "prettier
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 lua << EOF
-require("catppuccinoColor")
+--require("catppuccinoColor")
 require("treesitter")
 require("statusbar")
 EOF
