@@ -29,18 +29,30 @@ call plug#begin(stdpath('data') . 'vimplug')
 
     Plug 'whatyouhide/vim-gotham'
 
+    Plug 'tikhomirov/vim-glsl'
+
+
+
 
 call plug#end()
 
+" in your .vimrc (_vimrc for Windows)
+autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
+
+
 "AYU THEME SETTINGS (PUT IN ANOTHER FILE)
-set termguicolors     " enable true colors support
 "let ayucolor="light"  " for light version of theme
 "let ayucolor="mirage" " for mirage version of theme
 "let ayucolor="dark"   " for dark version of theme
 "colorscheme ayu
-colorscheme gotham
 
-" Auto Complete
+colorscheme gotham256
+set termguicolors
+
+
+
+
+" Auto Complete COC
 " <CR>
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
@@ -59,6 +71,9 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" Prettier
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 
 " basic settings
@@ -136,10 +151,9 @@ nnoremap <Leader>ci <cmd>call NERDComment('n', 'toggle')<CR>
 "xnoremap <silent> ga    <cmd>Lspsaga range_code_action<CR>
 "nnoremap <silent> gs    <cmd>Lspsaga signature_help<CR>
 
-"prettier
-command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 lua << EOF
 --require("catppuccinoColor")
 require("treesitter")
 require("statusbar")
 EOF
+hi Normal ctermbg=NONE guibg=NONE

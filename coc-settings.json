@@ -1,5 +1,14 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown","javascript","typescript","json","javascriptreact","typescriptreact"]
+  "coc.preferences.formatOnSaveFiletypes": [
+    "scss",
+    "css",
+    "markdown",
+    "javascript",
+    "typescript",
+    "json",
+    "javascriptreact",
+    "typescriptreact"
+  ],
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "none"
 }
-
-
