@@ -8,7 +8,5 @@
     "json",
     "javascriptreact",
     "typescriptreact"
-  ],
-  "prettier.singleQuote": true,
-  "prettier.trailingComma": "none"
+  ]
 }
